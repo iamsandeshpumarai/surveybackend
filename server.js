@@ -12,7 +12,7 @@ const userModel = require('./Models/UserModel');
 app.use(cookieParser());
 
 app.use(cors({
-  origin:['http://localhost:5173'],
+  origin:['http://localhost:5173',"https://surveyfrontend-five.vercel.app"],
 credentials:true
 }))
 app.set("trust proxy", 1);
