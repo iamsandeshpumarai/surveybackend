@@ -30,7 +30,7 @@ const deleteUserData = async (req, res) => {
       return res.status(400).json({ message: "There is no such user" });
 
     // Delete all surveys linked to this user
-    await SurveyModel.deleteMany({ userId: req.params.id });
+    await SurveyModel.deleteMany({ submittedBy: req.params.id });
 
     // Delete personal data
     await PersonalData.deleteMany({ user: req.params.id });

@@ -5,7 +5,7 @@ const Router = express.Router()
 
 
 
-Router.post('/logout', Check, logOut)
+Router.post('/logout', logOut)
 Router.post('/loginuser',UserLogin)
 Router.post('/loginadmin',RegisterAdmin)
 Router.post('/registeruser',UserSignup)

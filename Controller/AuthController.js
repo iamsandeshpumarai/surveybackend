@@ -12,8 +12,9 @@ const setAuthCookie = (res, token) => {
     httpOnly: true,
   maxAge: 24 * 60 * 60 * 1000,
   path: "/",
+secure:true,
   // MUST be true for cross-domain
-  secure: true,      
+  // secure: true,      
   // MUST be "none" for Vercel -> Render communication
   sameSite: "none",
   });
@@ -115,6 +116,9 @@ const UserSignup = async (req, res) => { // Added (req, res)
     console.log(err.message)
     res.status(500).json({ message: err.message });
   }
+}
+const AdminData = async(req,res)=>{
+  
 }
 
 
