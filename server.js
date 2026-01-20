@@ -30,7 +30,7 @@ app.use('/api/user',userRoute)
 
 
 app.get('/api/check',Check,async(req,res)=>{
-  console.log(req.id)
+  
  const user = await userModel.findById(req.id).select('-password')
 if(!user){
 return  res.status(400).json({message:"User not Found"})
@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
