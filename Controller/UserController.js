@@ -4,7 +4,7 @@ const UserModel = require("../Models/UserModel");
 
 // GET all users + their surveys
 const getUserData = async (req, res) => {
-  console.log("iam on userdata")
+
   try {
     const allUserData = await UserModel.find({role:"user"})
     res.status(200).json({ users: allUserData });

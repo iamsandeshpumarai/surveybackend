@@ -27,7 +27,7 @@ mongoose.connect(process.env.MONGO_URL)
 app.use('/api/survey',surveyRoute)
 app.use('/api/admin',adminRoute)
 app.use('/api/user',userRoute)
-
+app.use('/api/content',require('./Routes/ContentRoute'))
 
 app.get('/api/check',Check,async(req,res)=>{
   

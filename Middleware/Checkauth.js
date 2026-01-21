@@ -25,8 +25,10 @@ const Check = (req, res, next) => {
 }
 
 const CheckAdmin = async (req, res, next) => {
+
   try {
     const user = await UserModel.findById(req.id);
+
     if (!user || !user.role.includes('admin')) {
       return res.status(403).json({ message: "Access denied, admin only" });
     }
